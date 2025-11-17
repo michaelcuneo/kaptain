@@ -5,9 +5,26 @@
 
 declare module "sst" {
   export interface Resource {
+    "RaApi": {
+      "type": "sst.aws.ApiGatewayV2"
+      "url": string
+    }
+    "RaAuth": {
+      "type": "sst.aws.Auth"
+      "url": string
+    }
+    "RaEmailer": {
+      "configSet": string
+      "sender": string
+      "type": "sst.aws.Email"
+    }
     "RaProductions": {
       "type": "sst.aws.SvelteKit"
       "url": string
+    }
+    "RaUsertable": {
+      "name": string
+      "type": "sst.aws.Dynamo"
     }
   }
 }

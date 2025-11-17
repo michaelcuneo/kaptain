@@ -1,5 +1,145 @@
+@font-face {
+	font-family: 'Bank Gothic';
+	src:
+		url('/typeface/BankGothicBT-Light.woff2') format('woff2'),
+		url('/typeface/BankGothicBT-Light.woff') format('woff');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bank Gothic Medium';
+	src:
+		url('/typeface/BankGothicBT-Medium.woff2') format('woff2'),
+		url('/typeface/BankGothicBT-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Bank Gothic Bold';
+	src:
+		url('/typeface/BankGothicBold.woff2') format('woff2'),
+		url('/typeface/BankGothicBold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root {
+	/* Generic palette */
+	--color-inherit: inherit;
+	--color-current: currentColor;
+	--color-transparent: transparent;
+	--color-black: hsla(180, 15%, 5%, 1);
+	--color-white: hsla(0, 100%, 100%, 1);
+
+	/* Content surfaces & text */
+	--color-background: hsl(0, 0%, 98%);
+	--color-text: hsla(0, 0%, 15%, 1);
+	--color-surface: hsla(0, 0%, 95%, 1);
+	--color-on-surface: hsla(0, 0%, 0%, 1);
+	--color-on-surface-tint: hsla(0, 0%, 15%, 1);
+
+	/* Brand */
+	--color-primary: #ff6105;
+	--color-primary-light: hsla(33, 96%, 53%, 1);
+	--color-primary-dark: hsla(33, 96%, 33%, 1);
+	--color-secondary: rgb(65, 172, 243);
+	--color-tertiary: hsla(213, 2%, 44%, 1);
+	--color-error: hsla(7, 96%, 68%, 0.774);
+
+	/* Fonts */
+	--font-family-body: 'Work Sans', sans-serif;
+	--font-family-heading: 'Bank Gothic Bold', sans-serif;
+
+	/* Type scale */
+	--step--2: clamp(0.75rem, calc(0.6875rem + 0.3125vw), 0.875rem);
+	--step--1: clamp(0.875rem, calc(0.8125rem + 0.375vw), 1rem);
+	--step-0: clamp(1rem, calc(0.9rem + 0.5vw), 1.25rem);
+	--step-1: clamp(1.25rem, calc(1.05rem + 0.6vw), 1.5625rem);
+	--step-2: clamp(1.5rem, calc(1.2rem + 0.75vw), 1.953rem);
+	--step-3: clamp(1.875rem, calc(1.45rem + 1vw), 2.441rem);
+	--step-4: clamp(2.25rem, calc(1.7rem + 1.25vw), 3.052rem);
+	--step-5: clamp(2.75rem, calc(2.1rem + 1.6vw), 3.815rem);
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 body {
-    height: 100dvh;
-    margin: 0;
-    padding: 0;
+	display: flex;
+	height: 100dvh;
+	width: 100vw;
+	background: var(--color-white);
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Bank Gothic Bold';
+}
+
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px; /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+}
+
+.ham {
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	transition: transform 400ms;
+	user-select: none;
+}
+.hamRotate.active {
+	transform: rotate(45deg);
+}
+.hamRotate180.active {
+	transform: rotate(180deg);
+}
+.line {
+	fill: none;
+	transition:
+		stroke-dasharray 400ms,
+		stroke-dashoffset 400ms;
+	stroke: var(--color-white);
+	stroke-width: 5.5;
+	stroke-linecap: round;
+}
+.ham4 .top,
+.ham4 .bottom {
+	stroke-dasharray: 40 121;
+}
+.ham4.active .top,
+.ham4.active .bottom {
+	stroke-dashoffset: -68px;
 }
